@@ -214,8 +214,8 @@ function initializeGitHubIdQueries() {
     });
     // dashboard: PR comments (white box: xyz commented ... ago)
     _addQuery(`div.issues_comment div.message a.Link--secondary > span.Link--primary.text-bold`);
-    // team members in hovercard of a team in dashboard > your teams
-    _addQuery(`div.Popover-message div.d-flex > div.color-fg-muted > span.css-truncate.tooltipped span.css-truncate-target.text-bold`, {
+    // team members in hovercard of a team in dashboard > your teams or in PR reviews
+    _addQuery(`div.Popover-message div.d-flex > div.color-fg-muted > span > span.css-truncate-target.text-bold`, {
         hrefException: true,
     });
     // comment resolver in PR reviews (Conversation)
