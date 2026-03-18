@@ -83,6 +83,10 @@
   },
   "browser_specific_settings": {
     "gecko": {
+      "id": "{1375a016-3548-4cc2-a6c9-290f24b5b53d}",
+      "data_collection_permissions": {
+         "required": ["none"]
+      },
       "update_url": "https://nikolockenvitz.github.io/sap-addon/updates.json"
     }
   }
