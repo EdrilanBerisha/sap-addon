@@ -28,8 +28,13 @@ function initializeGitHubIdQueries() {
     // commit author (last commit / commit history; older GHE)
     _addQuery(`div[data-testid="author-avatar"] > a[data-testid="avatar-icon-link"] + a[data-hovercard-url^="/users/"]`);
     _addQuery(`div[data-testid="author-link"] > a[data-hovercard-url^="/users/"]`);
-    // commit author of last commit not linked to a GH account (single file view, box with info above actual file content)
-    _addQuery(`div.Box span.text-bold.Link--primary`, { hrefException: true });
+    // commit author of last commit not linked to a GH account (single file view, box with info above actual file content; branch view with all files)
+    _addQuery(`div[data-testid="latest-commit"] > div > div[data-testid="author-avatar"] > img + div[title] > span`, {
+        hrefException: true,
+    });
+    _addQuery(`div[data-testid="latest-commit"] > div > span[class*="AvatarStack"] ~ div[data-testid="author-link"] > div[title] > span`, {
+        hrefException: true,
+    });
     // several places where username can be found (hovering opens card with profile info)
     _addQuery(`[data-hovercard-type=user]`);
     // ???
